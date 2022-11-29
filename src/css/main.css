@@ -1,0 +1,11 @@
+/** 
+========================================
+                Main file
+========================================
+*/
+@import "reset.css";
+@import "base.css";
+@import "header.css";
+@import "navbar.css";
+@import "carousel.css";
+@import "modal.css";

@@ -1,0 +1,45 @@
+/** 
+========================================
+                Header
+========================================
+*/
+header{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(95, 95, 95);
+}
+.best-movie{
+    display: flex;
+    justify-content: space-between;
+    height: 30.555rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.best-movie__cover img{
+    border-radius: .5rem;
+    width: 20.75rem;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.best-movie__desc{
+    align-self: flex-end;
+    width: 50%;
+    padding-bottom: 2rem;
+}
+.best-movie__desc p{
+    padding-bottom: 1.5rem;
+    color: #ffffff;
+    font-size: 1.3rem;
+}
+.best-movie__title{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: #ffffff;
+    font-size: 2rem;
+}
+.button-layer{
+    display: flex;
+}
