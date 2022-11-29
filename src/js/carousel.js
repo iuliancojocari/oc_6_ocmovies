@@ -29,6 +29,12 @@ async function getBestMovie() {
       desc.innerHTML = descData['description']
       movieTitle.after(desc)
 
+      let moreBestInfoBtn = document.getElementById('secondary-button')
+      moreBestInfoBtn.addEventListener('click', () => {
+        document.getElementById('modal').style.display = 'block'
+        getMovieModal(data['results'][0]['id'])
+      })
+
       bestMovieCover.appendChild(img)
       bestMovie.appendChild(bestMovieCover)
     }
@@ -36,7 +42,46 @@ async function getBestMovie() {
     console.log(error)
   }
 }
-getBestMovie()
+
+async function getMovieModal(id) {
+  try {
+    const response = await fetch(url + id)
+
+    if (response.ok) {
+      const data = await response.json()
+
+      document.getElementById('modal-cover').src = data['image_url']
+      document.getElementById('modal-title').innerHTML = data['title']
+      document.getElementById('modal-genre').innerHTML = data['genres']
+      document.getElementById('modal-date').innerHTML = data['date_published']
+      document.getElementById('modal-rating').innerHTML = data['rated']
+      document.getElementById('modal-score').innerHTML =
+        data['imdb_score'] + '/10'
+      document.getElementById('modal-directors').innerHTML = data['directors']
+      document.getElementById('modal-actors').innerHTML = data['actors']
+      document.getElementById('modal-duration').innerHTML =
+        data['duration'] + ' min'
+      document.getElementById('modal-country').innerHTML = data['countries']
+      document.getElementById('modal-results').innerHTML =
+        data['worldwide_gross_income']
+      document.getElementById('modal-synopsis').innerHTML =
+        data['long_description']
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+function openModal(id) {
+  let modal = document.getElementById('modal')
+  getMovieModal(id)
+  modal.style.display = 'block'
+
+  let close = document.getElementById('modal__close-btn')
+  close.onclick = function () {
+    modal.style.display = 'none'
+  }
+}
 
 async function getBestMovies(category, skip, movies = 7, pagesize = '7') {
   try {
@@ -98,7 +143,9 @@ async function createCarousel(category, categoryName, skip = 0) {
 
     // create image element
     let image = document.createElement('img')
+    image.setAttribute('onclick', `openModal("${movie.id}")`)
     image.src = movie.image_url
+
     card.appendChild(image)
     carouselContent.appendChild(card)
   }
@@ -131,6 +178,7 @@ async function createCarousel(category, categoryName, skip = 0) {
 }
 
 window.addEventListener('load', function () {
+  getBestMovie()
   createCarousel((category = ''), (categoryName = 'Best'), (skip = 1))
   createCarousel((category = 'drama'), (categoryName = 'Drama'))
   createCarousel((category = 'family'), (categoryName = 'Family'))
