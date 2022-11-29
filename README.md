@@ -10,8 +10,7 @@ $ git clone clone https://github.com/OpenClassrooms-Student-Center/OCMovies-API-
 2. Rendez-vous depuis un terminal à la racine du répertoire ocmovies-api-fr avec la commande :
 
 ```
-shell
-$ cd ocmovies-api-fr
+shell $ cd ocmovies-api-fr
 ```
 
 3. Créer un environnement virtuel pour le projet avec $ python -m venv env sous windows ou $ python3 -m venv env sous macos ou linux.
