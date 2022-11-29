@@ -2,15 +2,14 @@
 
 1. Vous devez clonner et installer l'api Python Django fournie par OpenClassrooms pour ce projet :
 
-```
-shell
+```shell
 $ git clone clone https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR.git
 ```
 
 2. Rendez-vous depuis un terminal à la racine du répertoire ocmovies-api-fr avec la commande :
 
-```
-shell $ cd ocmovies-api-fr
+```shell
+$ cd ocmovies-api-fr
 ```
 
 3. Créer un environnement virtuel pour le projet avec $ python -m venv env sous windows ou $ python3 -m venv env sous macos ou linux.
@@ -27,8 +26,7 @@ shell $ cd ocmovies-api-fr
 
 Utilisez la commande ci-dessous pour télécharger le code source de ce projet:
 
-```
-shell
+```shell
 $ git clone https://github.com/iuliancojocari/oc_6_ocmovies.git
 ```
 
@@ -38,7 +36,6 @@ $ git clone https://github.com/iuliancojocari/oc_6_ocmovies.git
 
 2. Lancez un serveur http à l'aide de la commande :
 
-```
-shell
+```shell
 $ python http.server 8001
 ```
